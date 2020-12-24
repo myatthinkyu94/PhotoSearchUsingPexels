@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/photosSearchFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/photosSearchFragment"
+        android:name="jp.co.pexels.photosearchusingpexels.ui.main.view.PhotosSearchFragment"
+        android:label="SearchPhotosFragment"
+        tools:layout="@layout/photos_searched_fragment">
+        <action
+            android:id="@+id/action_photosSearchFragment_to_photoDetailsFragment"
+            app:destination="@id/photoDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/photosSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoDetailsFragment"
+        android:name="jp.co.pexels.photosearchusingpexels.ui.main.view.PhotoDetailsFragment"
+        android:label="PhotoDetailsFragment"
+        tools:layout="@layout/photo_details_fragment">
+        <argument
+            android:name="photo"
+            app:argType="jp.co.pexels.photosearchusingpexels.ui.main.data.model.Photo" />
+    </fragment>
+</navigation>
